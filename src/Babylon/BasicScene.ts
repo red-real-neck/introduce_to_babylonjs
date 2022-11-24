@@ -3,10 +3,9 @@ import {
   Engine,
   UniversalCamera,
   Vector3,
-  HemisphericLight,
+  DirectionalLight,
   MeshBuilder,
   GroundMesh,
-  StandardMaterial,
 } from "@babylonjs/core";
 
 export default class BasicScene {
@@ -31,9 +30,11 @@ export default class BasicScene {
     );
     camera.attachControl();
 
-    const light: HemisphericLight = new HemisphericLight(
+    camera.speed = 0.25;
+
+    const light: DirectionalLight = new DirectionalLight(
       "light",
-      new Vector3(0, 1, 0),
+      new Vector3(1, -1, 0),
       this.scene
     );
     light.intensity = 0.7;
