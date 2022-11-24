@@ -37,7 +37,6 @@ export default class BasicScene {
       new Vector3(1, -1, 0),
       this.scene
     );
-    light.intensity = 0.7;
 
     const ground: GroundMesh = MeshBuilder.CreateGround(
       "ground",
